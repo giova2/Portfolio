@@ -1,0 +1,58 @@
+.h-vh25 {
+  height: 25vh;
+}
+.project-row {
+  // background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+  a {
+    text-shadow: 2px 2px 3px indigo;
+    transition: 1.5s cubic-bezier(0.04, 1.1, 0.51, 0.87);
+    // cubic-bezier(0.075, 0.82, 0.165, 1);
+    &:hover {
+      @apply text-gray-300;
+      text-shadow: none;
+    }
+  }
+}
+
+.VueJS {
+  @apply bg-green-500 border-green-400 border-b-2;
+  background-image: url(../assets/icons/vue-js.svg);
+  a {
+    @apply text-blue-600;
+  }
+}
+
+.ReactJS {
+  @apply bg-blue-600 border-blue-500 border-b-2;
+  background-image: url(../assets/icons/react.svg);
+  back a {
+    @apply text-green-300;
+  }
+}
+
+.Python {
+  @apply bg-blue-700 border-blue-800 border-b-2;
+  background-image: url(../assets/icons/python.svg);
+  a {
+    @apply text-green-300;
+  }
+}
+
+.Angular {
+  @apply bg-red-700 border-red-800 border-b-2;
+  background-image: url(../assets/icons/angular.svg);
+  a {
+    @apply text-green-300;
+  }
+}
+
+.Laravel {
+  @apply bg-orange-600 border-orange-500 border-b-2;
+  background-image: url(../assets/icons/vue-js.svg);
+  a {
+    @apply text-indigo-300;
+  }
+}

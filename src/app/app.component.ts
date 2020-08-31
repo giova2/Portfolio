@@ -22,7 +22,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.firestore
-      .collection('/Records/')
+      .collection('/Records/', (ref) =>
+        ref.where('visible', '==', true).orderBy('order', 'asc')
+      )
       .snapshotChanges()
       .subscribe((res) => {
         if (res) {

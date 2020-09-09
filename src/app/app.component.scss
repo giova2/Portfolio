@@ -17,8 +17,14 @@
   }
 }
 
+@media (min-width: 640px) {
+  .project-row {
+    background-size: auto 250%;
+  }
+}
+
 .VueJS {
-  @apply bg-green-500 border-green-400 border-b-2;
+  @apply bg-green-400 border-green-500 border-b-2;
   background-image: url(../assets/icons/vue-js.svg);
   a {
     @apply text-blue-600;
@@ -50,8 +56,8 @@
 }
 
 .Laravel {
-  @apply bg-orange-600 border-orange-500 border-b-2;
-  background-image: url(../assets/icons/vue-js.svg);
+  @apply bg-orange-500 border-orange-600 border-b-2;
+  background-image: url(../assets/icons/laravel_new.svg);
   a {
     @apply text-indigo-300;
   }

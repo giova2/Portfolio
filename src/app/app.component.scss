@@ -56,9 +56,9 @@
 }
 
 .Laravel {
-  @apply bg-orange-500 border-orange-600 border-b-2;
+  @apply bg-gray-100 border-red-600 border-b-2 text-black;
   background-image: url(../assets/icons/laravel_new.svg);
   a {
-    @apply text-indigo-300;
+    @apply text-black;
   }
 }

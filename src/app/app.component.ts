@@ -10,6 +10,7 @@ type Project = {
   repoLink: string;
   demoLink: string;
   stack: string[];
+  visible: boolean;
 };
 
 type Projects = Project[];
@@ -32,16 +33,7 @@ export class AppComponent implements OnInit {
     const projectsCollection = collection(this.firestore, 'Records');
     collectionData(projectsCollection).subscribe(res => {
       if (res) {
-        this.projects = (res as Projects).map(
-          ({ id, title, description, repoLink, demoLink, stack }) => ({
-            id,
-            title,
-            description,
-            repoLink,
-            demoLink,
-            stack,
-          })
-        );
+        this.projects = (res as Projects).filter(project => !!project.visible);
       }
     });
   }

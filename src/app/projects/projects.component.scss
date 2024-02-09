@@ -1,15 +1,18 @@
+$dark-textShadow: 2px 2px 3px indigo;
+$light-textShadow: 2px 2px 3px white;
+
 .h-vh25 {
   height: 25vh;
+  min-height: 100px;
 }
+
 .project-row {
-  // background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 50%;
+  background-size: 200px;
   a {
-    text-shadow: 2px 2px 3px indigo;
+    text-shadow: $dark-textShadow;
     transition: 1.5s cubic-bezier(0.04, 1.1, 0.51, 0.87);
-    // cubic-bezier(0.075, 0.82, 0.165, 1);
     &:hover {
       @apply text-gray-300;
       text-shadow: none;
@@ -19,7 +22,7 @@
 
 @media (min-width: 640px) {
   .project-row {
-    background-size: auto 250%;
+    background-size: 250px;
   }
 }
 
@@ -83,18 +86,21 @@
 .SVG {
   @apply bg-orange-400 border-red-600 border-b-2 text-black;
   background-image: url(../../assets/icons/svg_vector.svg);
+  background-origin: content-box;
+  background-position-y: 65%;
   a {
-    @apply text-white;
+    @apply text-gray-700;
+    text-shadow: $light-textShadow;
     &:hover {
-      @apply text-gray-700;
-      text-shadow: none;
+      @apply text-white;
+      text-shadow: $dark-textShadow;
     }
   }
   h3,
   p,
   span {
-    @apply text-white;
-    text-shadow: 2px 2px 3px indigo;
+    @apply text-gray-700;
+    text-shadow: $light-textShadow;
   }
 }
 
@@ -105,4 +111,5 @@
   }
   width: 30px;
   height: 30px;
+  cursor: pointer;
 }

@@ -1,0 +1,108 @@
+.h-vh25 {
+  height: 25vh;
+}
+.project-row {
+  // background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+  a {
+    text-shadow: 2px 2px 3px indigo;
+    transition: 1.5s cubic-bezier(0.04, 1.1, 0.51, 0.87);
+    // cubic-bezier(0.075, 0.82, 0.165, 1);
+    &:hover {
+      @apply text-gray-300;
+      text-shadow: none;
+    }
+  }
+}
+
+@media (min-width: 640px) {
+  .project-row {
+    background-size: auto 250%;
+  }
+}
+
+.VueJS {
+  @apply bg-green-400 border-green-500 border-b-2;
+  background-image: url(../../assets/icons/vuejs.svg);
+  a {
+    @apply text-blue-600;
+  }
+}
+
+.ReactJS {
+  @apply bg-blue-600 border-blue-500 border-b-2;
+  background-image: url(../../assets/icons/react.svg);
+  back a {
+    @apply text-green-300;
+  }
+}
+
+.Python {
+  @apply bg-blue-700 border-blue-800 border-b-2;
+  background-image: url(../../assets/icons/python.svg);
+  a {
+    @apply text-green-300;
+  }
+}
+
+.Angular {
+  @apply bg-red-700 border-red-800 border-b-2;
+  background-image: url(../../assets/icons/angular.svg);
+  a {
+    @apply text-green-300;
+  }
+}
+
+.Laravel {
+  @apply bg-gray-100 border-red-600 border-b-2 text-black;
+  background-image: url(../../assets/icons/laravel_new.svg);
+  a {
+    @apply text-black;
+    &:hover {
+      @apply text-gray-700;
+      text-shadow: none;
+    }
+  }
+}
+
+.List {
+  @apply bg-orange-100 border-orange-600 border-b-2 text-black;
+  background-image: url(../../assets/wave.svg);
+  background-size: cover;
+  a {
+    @apply text-black;
+    &:hover {
+      @apply text-gray-700;
+      text-shadow: none;
+    }
+  }
+}
+
+.SVG {
+  @apply bg-orange-400 border-red-600 border-b-2 text-black;
+  background-image: url(../../assets/icons/svg_vector.svg);
+  a {
+    @apply text-white;
+    &:hover {
+      @apply text-gray-700;
+      text-shadow: none;
+    }
+  }
+  h3,
+  p,
+  span {
+    @apply text-white;
+    text-shadow: 2px 2px 3px indigo;
+  }
+}
+
+.home {
+  @apply flex justify-center items-center absolute right-5 top-5 rounded-full bg-white text-slate-800;
+  &:hover {
+    @apply bg-slate-800 text-white;
+  }
+  width: 30px;
+  height: 30px;
+}

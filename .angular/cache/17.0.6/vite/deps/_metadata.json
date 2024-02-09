@@ -1,56 +1,56 @@
 {
-  "hash": "f90d3c52",
-  "browserHash": "73fb1b06",
+  "hash": "b0410b52",
+  "browserHash": "fe8e5174",
   "optimized": {
     "@angular/common": {
       "src": "../../../../../node_modules/@angular/common/fesm2022/common.mjs",
       "file": "@angular_common.js",
-      "fileHash": "e12f8353",
+      "fileHash": "c34febf6",
       "needsInterop": false
     },
     "@angular/core": {
       "src": "../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "ee0c8fcc",
+      "fileHash": "1ff65934",
       "needsInterop": false
     },
     "@angular/fire/app": {
       "src": "../../../../../node_modules/@angular/fire/fesm2022/angular-fire-app.mjs",
       "file": "@angular_fire_app.js",
-      "fileHash": "ff4f6246",
+      "fileHash": "78e58f80",
       "needsInterop": false
     },
     "@angular/fire/firestore": {
       "src": "../../../../../node_modules/@angular/fire/fesm2022/angular-fire-firestore.mjs",
       "file": "@angular_fire_firestore.js",
-      "fileHash": "f229d7ff",
+      "fileHash": "e28a0e25",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "5830979a",
+      "fileHash": "e60241b6",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "b8b47d19",
+      "fileHash": "f4d47738",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-WD5V3Z5F": {
-      "file": "chunk-WD5V3Z5F.js"
+    "chunk-GC7Y5W32": {
+      "file": "chunk-GC7Y5W32.js"
     },
-    "chunk-BQ6WPLKW": {
-      "file": "chunk-BQ6WPLKW.js"
+    "chunk-2SSXE3V3": {
+      "file": "chunk-2SSXE3V3.js"
     },
-    "chunk-EGMCRNIX": {
-      "file": "chunk-EGMCRNIX.js"
+    "chunk-BWZSYUYS": {
+      "file": "chunk-BWZSYUYS.js"
     },
-    "chunk-SXO4CNMK": {
-      "file": "chunk-SXO4CNMK.js"
+    "chunk-3SFQOTIX": {
+      "file": "chunk-3SFQOTIX.js"
     }
   }
 }

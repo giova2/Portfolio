@@ -8,13 +8,40 @@ import {
   RouterLink,
   RouterOutlet,
 } from '@angular/router';
+import {
+  trigger,
+  style,
+  animate,
+  transition,
+  stagger,
+  query,
+} from '@angular/animations';
 
+const listAnimation = trigger('listAnimation', [
+  transition('* <=> *', [
+    query(
+      ':enter',
+      [
+        style({ opacity: 0, transform: 'translateX(-100%)' }),
+        stagger(
+          '50ms',
+          animate(
+            '500ms ease-out',
+            style({ opacity: 1, transform: 'translateX(0px)' })
+          )
+        ),
+      ],
+      { optional: true }
+    ),
+  ]),
+]);
 @Component({
   selector: 'app-projects',
   standalone: true,
   imports: [CommonModule, RouterLink, RouterOutlet],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
+  animations: [listAnimation],
 })
 export class ProjectsComponent implements OnInit {
   title = 'Projects';
@@ -42,7 +69,6 @@ export class ProjectsComponent implements OnInit {
 
     collectionData(projectsCollection, { idField: 'id' }).subscribe(res => {
       if (res) {
-        console.log(res);
         this.projects = (res as Projects).filter(project => !!project.visible);
       }
     });

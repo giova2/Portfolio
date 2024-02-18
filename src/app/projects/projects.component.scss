@@ -1,6 +1,11 @@
 $dark-textShadow: 2px 2px 3px indigo;
 $light-textShadow: 2px 2px 3px white;
 
+.container {
+  transition: background-color 1s ease-in;
+  background-color: #111;
+}
+
 .h-vh25 {
   height: 25vh;
   min-height: 25vh;

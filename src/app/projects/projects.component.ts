@@ -1,7 +1,20 @@
-import { Component, OnInit, inject } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  OnInit,
+  Renderer2,
+  inject,
+  ViewChild,
+} from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Firestore, collectionData, collection } from '@angular/fire/firestore';
-import { Projects } from './types';
+import {
+  Firestore,
+  collection,
+  query as fbQuery,
+  orderBy,
+  getDocs,
+} from '@angular/fire/firestore';
+import { Project, Projects } from './types';
 import {
   Router,
   ActivatedRoute,
@@ -35,6 +48,7 @@ const listAnimation = trigger('listAnimation', [
     ),
   ]),
 ]);
+
 @Component({
   selector: 'app-projects',
   standalone: true,
@@ -44,34 +58,50 @@ const listAnimation = trigger('listAnimation', [
   animations: [listAnimation],
 })
 export class ProjectsComponent implements OnInit {
+  @ViewChild('container', { static: false }) containerRef!: ElementRef;
+
   title = 'Projects';
   projects: Projects = [];
   showHome = false;
   private firestore: Firestore = inject(Firestore);
+  count = 0;
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router
+    private router: Router,
+    private renderer: Renderer2,
+    private el: ElementRef
   ) {}
 
-  ngOnInit() {
+  async ngOnInit() {
     const itemId = this.route.snapshot.paramMap.get('id');
-    let projectsCollection;
+    let projectsCollectionRef;
     if (itemId) {
-      projectsCollection = collection(
+      projectsCollectionRef = collection(
         this.firestore,
         `Records/${itemId}/Projects`
       );
       this.showHome = true;
     } else {
-      projectsCollection = collection(this.firestore, 'Records');
+      projectsCollectionRef = collection(this.firestore, 'Records');
     }
-
-    collectionData(projectsCollection, { idField: 'id' }).subscribe(res => {
-      if (res) {
-        this.projects = (res as Projects).filter(project => !!project.visible);
+    const projectsQuery = fbQuery(projectsCollectionRef, orderBy('order'));
+    const projectsQuerySnapshot = await getDocs(projectsQuery);
+    projectsQuerySnapshot.forEach(res => {
+      const project = res.data() as Project;
+      console.log({ project, res });
+      if (project && !!project.visible) {
+        this.projects.push({ ...project, id: res.id });
       }
     });
+  }
+
+  captureDoneEvent() {
+    // Aquí puedes realizar la lógica que deseas después de que la animación haya terminado
+    if (this.containerRef && this.projects.length) {
+      const container = this.containerRef.nativeElement;
+      container.classList.add('container');
+    }
   }
 
   gotoMain() {

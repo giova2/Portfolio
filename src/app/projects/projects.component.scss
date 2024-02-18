@@ -84,6 +84,18 @@ $light-textShadow: 2px 2px 3px white;
     }
   }
 }
+.Blockchain:nth-child(2n) {
+  @apply text-black;
+  background-image: url(../../assets/blockchain-light.svg);
+  a {
+    @apply text-black;
+    text-shadow: $light-textShadow;
+    &:hover {
+      @apply text-green-200;
+      text-shadow: $dark-textShadow;
+    }
+  }
+}
 
 .ListAnimations {
   @apply bg-orange-100 border-orange-600 border-b-2 text-black;

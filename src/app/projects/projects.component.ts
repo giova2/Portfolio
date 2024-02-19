@@ -58,7 +58,7 @@ const listAnimation = trigger('listAnimation', [
   animations: [listAnimation],
 })
 export class ProjectsComponent implements OnInit {
-  @ViewChild('container', { static: false }) containerRef!: ElementRef;
+  @ViewChild('mainContainer', { static: false }) mainContainerRef!: ElementRef;
 
   title = 'Projects';
   projects: Projects = [];
@@ -98,9 +98,9 @@ export class ProjectsComponent implements OnInit {
 
   captureDoneEvent() {
     // Aquí puedes realizar la lógica que deseas después de que la animación haya terminado
-    if (this.containerRef && this.projects.length) {
-      const container = this.containerRef.nativeElement;
-      container.classList.add('container');
+    if (this.mainContainerRef && this.projects.length) {
+      const mainContainer = this.mainContainerRef.nativeElement;
+      mainContainer.classList.add('mainContainer');
     }
   }
 

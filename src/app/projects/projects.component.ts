@@ -89,7 +89,6 @@ export class ProjectsComponent implements OnInit {
     const projectsQuerySnapshot = await getDocs(projectsQuery);
     projectsQuerySnapshot.forEach(res => {
       const project = res.data() as Project;
-      console.log({ project, res });
       if (project && !!project.visible) {
         this.projects.push({ ...project, id: res.id });
       }
@@ -97,7 +96,6 @@ export class ProjectsComponent implements OnInit {
   }
 
   captureDoneEvent() {
-    // Aquí puedes realizar la lógica que deseas después de que la animación haya terminado
     if (this.mainContainerRef && this.projects.length) {
       const mainContainer = this.mainContainerRef.nativeElement;
       mainContainer.classList.add('mainContainer');

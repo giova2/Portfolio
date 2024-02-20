@@ -3,7 +3,7 @@ $light-textShadow: 2px 2px 3px white;
 
 .mainContainer {
   transition: background-color 1s ease-in;
-  background-color: #111;
+  background-color: #111111;
 }
 
 .h-vh25 {
@@ -84,6 +84,7 @@ $light-textShadow: 2px 2px 3px white;
     }
   }
 }
+
 .Blockchain:nth-child(2n) {
   @apply text-black;
   background-image: url(../../assets/blockchain-light.svg);
@@ -92,6 +93,35 @@ $light-textShadow: 2px 2px 3px white;
     text-shadow: $light-textShadow;
     &:hover {
       @apply text-green-200;
+      text-shadow: $dark-textShadow;
+    }
+  }
+}
+
+.project-row.Javascript {
+  @apply bg-black border-yellow-400 border-b-2 text-white;
+  background-image: url(../../assets/icons/javascript.svg);
+  background-size: 100% 100%;
+  text-shadow: $dark-textShadow;
+  a {
+    @apply text-black;
+    text-shadow: $light-textShadow;
+    &:hover {
+      @apply text-blue-500;
+    }
+  }
+}
+
+.project-row.NodeJS {
+  @apply bg-white border-green-400 border-b-2 text-black;
+  background-image: url(../../assets/icons/nodejs.svg);
+  background-size: contain;
+  text-shadow: $dark-textShadow;
+  a {
+    @apply text-black;
+    text-shadow: $light-textShadow;
+    &:hover {
+      @apply text-blue-500;
       text-shadow: $dark-textShadow;
     }
   }

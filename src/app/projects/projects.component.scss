@@ -6,6 +6,10 @@ $light-textShadow: 2px 2px 3px white;
   background-color: #111111;
 }
 
+.screen-centered {
+  @apply flex flex-col h-screen w-screen justify-center items-center;
+}
+
 .h-vh25 {
   height: 25vh;
   min-height: 25vh;

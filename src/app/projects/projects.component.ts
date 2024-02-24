@@ -62,6 +62,7 @@ export class ProjectsComponent implements OnInit {
   title = 'Projects';
   projects: Projects = [];
   showHome = false;
+  loading = true;
   private firestore: Firestore = inject(Firestore);
   count = 0;
 
@@ -90,6 +91,7 @@ export class ProjectsComponent implements OnInit {
         this.projects.push({ ...project, id: res.id });
       }
     });
+    this.loading = false;
   }
 
   captureDoneEvent() {

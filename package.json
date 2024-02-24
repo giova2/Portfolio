@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --base-href=https://giova2.github.io/Portfolio/",
+    "build": "ng build --base-href=https://giova-portfolio.netlify.app",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",

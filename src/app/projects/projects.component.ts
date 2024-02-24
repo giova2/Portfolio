@@ -2,7 +2,6 @@ import {
   Component,
   ElementRef,
   OnInit,
-  Renderer2,
   inject,
   ViewChild,
 } from '@angular/core';
@@ -68,9 +67,7 @@ export class ProjectsComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
-    private renderer: Renderer2,
-    private el: ElementRef
+    private router: Router
   ) {}
 
   async ngOnInit() {

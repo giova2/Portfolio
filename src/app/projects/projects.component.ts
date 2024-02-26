@@ -28,6 +28,7 @@ import {
   stagger,
   query,
 } from '@angular/animations';
+import { LoadingComponent } from '../loading/loading.component';
 
 const listAnimation = trigger('listAnimation', [
   transition('* <=> *', [
@@ -51,7 +52,7 @@ const listAnimation = trigger('listAnimation', [
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule, RouterLink, RouterOutlet],
+  imports: [CommonModule, RouterLink, RouterOutlet, LoadingComponent],
   templateUrl: './projects.component.html',
   styleUrl: './projects.component.scss',
   animations: [listAnimation],
@@ -63,6 +64,7 @@ export class ProjectsComponent implements OnInit {
   projects: Projects = [];
   showHome = false;
   loading = true;
+  loadingAnimationFinishDone = false;
   private firestore: Firestore = inject(Firestore);
   count = 0;
 
@@ -103,5 +105,9 @@ export class ProjectsComponent implements OnInit {
 
   gotoMain() {
     this.router.navigate(['/']);
+  }
+
+  turnOffLoading(){
+    this.loadingAnimationFinishDone = true;
   }
 }

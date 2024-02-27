@@ -11,8 +11,9 @@
     "lint": "ng lint",
     "deploy:gh-pages": "gh-pages -d dist/browser",
     "login": "netlify login",
-    "deploy:netlify": "netlify deploy --dir=dist/browser",
-    "deploy:netlify:prod": "netlify deploy --prod"
+    "create-redirects": "touch dist/browser/_redirects && echo '# Redirects from what the browser requests to what we serve \n/*  /index  200' >> dist/browser/_redirects",
+    "deploy:netlify": "npm run create-redirects && netlify deploy --dir=dist/browser",
+    "deploy:netlify:prod": "netlify deploy --dir=dist/browser --prod"
   },
   "private": true,
   "dependencies": {

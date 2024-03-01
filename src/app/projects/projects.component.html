@@ -14,7 +14,7 @@
   <div *ngIf="projects.length" [@listAnimation]="projects.length" (@listAnimation.done)="captureDoneEvent()">
     <div 
       class="w-full h-vh25 py-4 flex project-row justify-center {{
-        project.routePath ? 'List'+project.routePath : project.stack[0]
+        project.routePath ? 'List'+project.routePath : project.stack[0].toLowerCase().replace('.', '')
       }}"
       *ngFor="let project of projects"
       >

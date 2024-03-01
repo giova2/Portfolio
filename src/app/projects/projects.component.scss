@@ -1,5 +1,7 @@
-$dark-textShadow: 2px 2px 3px indigo;
-$light-textShadow: 2px 2px 3px white;
+$dark-textShadow: 2px 2px 5px indigo;
+$light-textShadow: 2px 2px 5px white;
+$dark-highContrast-textShadow: 2px 2px 1px indigo;
+$light-highContrast-textShadow: 2px 2px 1px white;
 
 .mainContainer {
   transition: background-color 1s ease-in;
@@ -31,15 +33,19 @@ $light-textShadow: 2px 2px 3px white;
   }
 }
 
-.VueJS {
+.vuejs {
   @apply bg-green-400 border-green-500 border-b-2;
   background-image: url(../../assets/icons/vuejs.svg);
   a {
-    @apply text-blue-600;
+    @apply text-blue-400;
+    &:hover {
+      @apply text-blue-200;
+      text-shadow: $dark-highContrast-textShadow;
+    }
   }
 }
 
-.ReactJS {
+.reactjs {
   @apply bg-blue-600 border-blue-500 border-b-2;
   background-image: url(../../assets/icons/react.svg);
   back a {
@@ -47,7 +53,20 @@ $light-textShadow: 2px 2px 3px white;
   }
 }
 
-.Python {
+.nextjs {
+  @apply bg-slate-100 border-slate-800 border-b-2 text-black;
+  background-image: url(../../assets/icons/next-js.svg);
+  a {
+    @apply text-blue-600;
+    text-shadow: $dark-highContrast-textShadow;
+    &:hover {
+      @apply text-blue-200;
+      text-shadow: $dark-highContrast-textShadow;
+    }
+  }
+}
+
+.python {
   @apply bg-blue-700 border-blue-800 border-b-2;
   background-image: url(../../assets/icons/python.svg);
   a {
@@ -55,7 +74,7 @@ $light-textShadow: 2px 2px 3px white;
   }
 }
 
-.Angular {
+.angular {
   @apply bg-red-700 border-red-800 border-b-2;
   background-image: url(../../assets/icons/angular.svg);
   a {
@@ -63,7 +82,7 @@ $light-textShadow: 2px 2px 3px white;
   }
 }
 
-.Laravel {
+.laravel {
   @apply bg-gray-100 border-red-600 border-b-2 text-black;
   background-image: url(../../assets/icons/laravel_new.svg);
   a {
@@ -75,7 +94,7 @@ $light-textShadow: 2px 2px 3px white;
   }
 }
 
-.Blockchain {
+.blockchain {
   @apply bg-red-600 border-red-400 border-b-2 text-white;
   background-image: url(../../assets/blockchain-dark.svg);
   background-size: 250% 250%;
@@ -89,7 +108,7 @@ $light-textShadow: 2px 2px 3px white;
   }
 }
 
-.Blockchain:nth-child(2n) {
+.blockchain:nth-child(2n) {
   @apply text-black;
   background-image: url(../../assets/blockchain-light.svg);
   a {
@@ -102,7 +121,7 @@ $light-textShadow: 2px 2px 3px white;
   }
 }
 
-.project-row.Javascript {
+.project-row.javascript {
   @apply bg-black border-yellow-400 border-b-2 text-white;
   background-image: url(../../assets/icons/javascript.svg);
   background-size: 100% 100%;
@@ -116,7 +135,7 @@ $light-textShadow: 2px 2px 3px white;
   }
 }
 
-.project-row.NodeJS {
+.project-row.nodejs {
   @apply bg-white border-green-400 border-b-2 text-black;
   background-image: url(../../assets/icons/nodejs.svg);
   background-size: contain;
@@ -218,7 +237,7 @@ $light-textShadow: 2px 2px 3px white;
   }
 }
 
-.SVG {
+.svg {
   @apply bg-orange-400 border-red-600 border-b-2 text-black;
   background-image: url(../../assets/icons/svg_vector.svg);
   background-origin: content-box;

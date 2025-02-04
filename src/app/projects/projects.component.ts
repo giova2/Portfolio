@@ -29,6 +29,7 @@ import {
   query,
 } from '@angular/animations';
 import { LoadingComponent } from '../loading/loading.component';
+import { getCachedProjects, setCachedProjects } from './utils';
 
 const listAnimation = trigger('listAnimation', [
   transition('* <=> *', [
@@ -54,7 +55,7 @@ const listAnimation = trigger('listAnimation', [
   standalone: true,
   imports: [CommonModule, RouterLink, RouterOutlet, LoadingComponent],
   templateUrl: './projects.component.html',
-  styleUrl: './projects.component.scss',
+  styleUrls: ['./projects.component.scss', './svgs.scss', './blockchain.scss'],
   animations: [listAnimation],
 })
 export class ProjectsComponent implements OnInit {
@@ -75,6 +76,13 @@ export class ProjectsComponent implements OnInit {
 
   async ngOnInit() {
     const itemId = this.route.snapshot.paramMap.get('id');
+    const cachedProjects = getCachedProjects(itemId);
+    if (cachedProjects) {
+      this.projects = cachedProjects;
+      this.loading = false;
+      this.showHome = !!itemId;
+      return;
+    }
     let projectsCollectionRef;
     if (itemId) {
       projectsCollectionRef = collection(
@@ -87,12 +95,15 @@ export class ProjectsComponent implements OnInit {
     }
     const projectsQuery = fbQuery(projectsCollectionRef, orderBy('order'));
     const projectsQuerySnapshot = await getDocs(projectsQuery);
+    console.log({ projectsQuerySnapshot });
     projectsQuerySnapshot.forEach(res => {
       const project = res.data() as Project;
       if (project && !!project.visible) {
         this.projects.push({ ...project, id: res.id });
       }
     });
+    setCachedProjects(itemId, this.projects);
+
     this.loading = false;
   }
 
@@ -107,7 +118,7 @@ export class ProjectsComponent implements OnInit {
     this.router.navigate(['/']);
   }
 
-  turnOffLoading(){
+  turnOffLoading() {
     this.loadingAnimationFinishDone = true;
   }
 }

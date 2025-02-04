@@ -9,9 +9,10 @@
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
+    "lint:fix": "ng lint --fix",
     "deploy:gh-pages": "gh-pages -d dist/browser",
     "login": "netlify login",
-    "create-redirects": "touch dist/browser/_redirects && echo '# Redirects from what the browser requests to what we serve \n/*  /index  200' >> dist/browser/_redirects",
+    "create-redirects": "touch dist/browser/_redirects && echo '# Redirects from what the browser requests to what we serve \n/*  /index  200' > dist/browser/_redirects",
     "deploy:netlify": "npm run create-redirects && netlify deploy --dir=dist/browser",
     "deploy:netlify:prod": "netlify deploy --dir=dist/browser --prod"
   },

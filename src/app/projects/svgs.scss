@@ -1,0 +1,155 @@
+$dark-textShadow: 2px 2px 5px indigo;
+$light-textShadow: 2px 2px 5px white;
+$dark-highContrast-textShadow: 2px 2px 1px indigo;
+$light-highContrast-textShadow: 2px 2px 1px white;
+
+.vuejs {
+  @apply bg-green-400 border-green-500 border-b-2;
+  background-image: url(../../assets/icons/vuejs.svg);
+  a {
+    @apply text-blue-400;
+    &:hover {
+      @apply text-blue-200;
+      text-shadow: $dark-highContrast-textShadow;
+    }
+  }
+}
+
+.reactjs {
+  @apply bg-blue-600 border-blue-500 border-b-2;
+  background-image: url(../../assets/icons/react.svg);
+  back a {
+    @apply text-green-300;
+  }
+}
+
+.nextjs {
+  @apply bg-slate-100 border-slate-800 border-b-2 text-black;
+  background-image: url(../../assets/icons/next-js.svg);
+  a {
+    @apply text-blue-600;
+    text-shadow: $dark-highContrast-textShadow;
+    &:hover {
+      @apply text-blue-200;
+      text-shadow: $dark-highContrast-textShadow;
+    }
+  }
+}
+
+.python {
+  @apply bg-blue-700 border-blue-800 border-b-2;
+  background-image: url(../../assets/icons/python.svg);
+  a {
+    @apply text-green-300;
+  }
+}
+
+.angular {
+  @apply bg-red-700 border-red-800 border-b-2;
+  background-image: url(../../assets/icons/angular.svg);
+  a {
+    @apply text-green-300;
+  }
+}
+
+.laravel {
+  @apply bg-gray-100 border-red-600 border-b-2 text-black;
+  background-image: url(../../assets/icons/laravel_new.svg);
+  a {
+    @apply text-black;
+    &:hover {
+      @apply text-gray-700;
+      text-shadow: none;
+    }
+  }
+}
+
+.llm {
+  @apply bg-black border-sky-400 border-b-2 text-white;
+  background-image: url(../../assets/icons/llm.svg);
+  background-size: 250% 250%;
+  a {
+    @apply text-white;
+    text-shadow: $dark-textShadow;
+    &:hover {
+      @apply text-red-200;
+      text-shadow: $dark-textShadow;
+    }
+  }
+}
+
+.project-row.javascript {
+  @apply bg-black border-yellow-400 border-b-2 text-white;
+  background-image: url(../../assets/icons/javascript.svg);
+  background-size: 100% 100%;
+  text-shadow: $dark-textShadow;
+  a {
+    @apply text-black;
+    text-shadow: $light-textShadow;
+    &:hover {
+      @apply text-blue-500;
+    }
+  }
+}
+
+.project-row.nodejs {
+  @apply bg-white border-green-400 border-b-2 text-black;
+  background-image: url(../../assets/icons/nodejs.svg);
+  background-size: contain;
+  text-shadow: $dark-textShadow;
+  a {
+    @apply text-black;
+    text-shadow: $light-textShadow;
+    &:hover {
+      @apply text-blue-500;
+      text-shadow: $dark-textShadow;
+    }
+  }
+}
+
+.ListAI {
+  @apply bg-black border-blue-600 border-b-2 text-white;
+  background-image: url(../../assets/waveAITop.svg);
+  background-size: cover;
+  a {
+    @apply text-white;
+    &:hover {
+      @apply text-gray-200;
+      text-shadow: none;
+    }
+  }
+}
+
+.ListAnimations {
+  @apply bg-orange-100 border-orange-600 border-b-2 text-black;
+  background-image: url(../../assets/wave.svg);
+  background-size: cover;
+  a {
+    @apply text-black;
+    &:hover {
+      @apply text-gray-700;
+      text-shadow: none;
+    }
+  }
+}
+
+.svg {
+  @apply bg-orange-400 border-red-600 border-b-2 text-black;
+  background-image: url(../../assets/icons/svg_vector.svg);
+  background-origin: content-box;
+  background-position-y: 65%;
+  a {
+    @apply text-gray-700;
+    text-shadow: $light-textShadow;
+    &:hover {
+      @apply text-white;
+      text-shadow: $dark-textShadow;
+    }
+  }
+  h3,
+  p,
+  span {
+    @apply text-gray-700;
+    text-shadow: $light-textShadow;
+  }
+}

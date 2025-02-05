@@ -64,6 +64,20 @@ $light-highContrast-textShadow: 2px 2px 1px white;
   }
 }
 
+.threejs {
+  @apply bg-indigo-700 border-indigo-500 border-b-2 text-white;
+  background-image: url(../../assets/icons/threejs.svg);
+  background-size: cover;
+  a {
+    color: lime;
+    text-shadow: $dark-highContrast-textShadow;
+    &:hover {
+      @apply text-lime-300;
+      text-shadow: $dark-highContrast-textShadow;
+    }
+  }
+}
+
 .llm {
   @apply bg-black border-sky-400 border-b-2 text-white;
   background-image: url(../../assets/icons/llm.svg);
@@ -139,11 +153,11 @@ $light-highContrast-textShadow: 2px 2px 1px white;
   background-origin: content-box;
   background-position-y: 65%;
   a {
-    @apply text-gray-700;
-    text-shadow: $light-textShadow;
+    @apply text-sky-400;
+    text-shadow: $dark-highContrast-textShadow;
     &:hover {
-      @apply text-white;
-      text-shadow: $dark-textShadow;
+      @apply text-sky-700;
+      text-shadow: $light-highContrast-textShadow;
     }
   }
   h3,

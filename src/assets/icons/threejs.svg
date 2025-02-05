@@ -1,0 +1,89 @@
+<!-- <svg fill="none" height="2500" width="2500" xmlns="http://www.w3.org/2000/svg" viewBox="-40 -25 270 270"> -->
+<svg id="wave" style="transform:rotate(0deg); transition: 0.3s" viewBox="0 0 1440 390" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<linearGradient id="sw-gradient-0" x1="100%" y1="100%">
+  <stop offset="0%" stop-color="lightblue" stop-opacity=".5">
+    <animate attributeName="stop-color" values="lightblue;blue;red;red;black;red;red;purple;lightblue" dur="20s" repeatCount="indefinite" />
+  </stop>
+  <stop offset="100%" stop-color="lightblue" stop-opacity=".5">
+    <animate attributeName="stop-color" values="lightblue;orange;purple;purple;black;purple;purple;blue;lightblue" dur="20s" repeatCount="indefinite" />
+    <animate attributeName="offset" values=".95;.80;.60;.40;.20;0;.20;.40;.60;.80;.95" dur="20s" repeatCount="indefinite" />    
+  </stop>
+</linearGradient>
+</defs>
+<rect x="0" y="0" width="100%" height="100%" fill="url(#sw-gradient-0)" />
+<defs>
+<linearGradient id="sw-gradient-1" x1="0" x2="0" y1="1" y2="0">
+  <stop stop-color="rgba(122, 80, 52, 1)" offset="0%"></stop>
+  <stop stop-color="rgba(122, 80, 52, 1)" offset="100%"></stop>
+</linearGradient>
+</defs>
+<path style="transform:translate(0, 0px); opacity:0.5" fill="url(#sw-gradient-1)" d="M0,441L72,196L144,98L216,294L288,196L360,441L432,343L504,49L576,441L648,343L720,392L792,294L864,441L936,392L1008,343L1080,392L1152,441L1224,196L1296,98L1368,441L1440,441L1512,49L1584,343L1656,343L1728,49L1728,490L1656,490L1584,490L1512,490L1440,490L1368,490L1296,490L1224,490L1152,490L1080,490L1008,490L936,490L864,490L792,490L720,490L648,490L576,490L504,490L432,490L360,490L288,490L216,490L144,490L72,490L0,490Z"></path>
+<defs>
+<linearGradient id="sw-gradient-2" x1="0" x2="0" y1="1" y2="0">
+  <stop stop-color="rgba(122, 80, 52, 1)" offset="0%"></stop>
+  <stop stop-color="rgba(122, 80, 52, 1)" offset="100%"></stop>
+</linearGradient>
+</defs>
+<path style="transform:translate(0, 0px); opacity:1" fill="url(#sw-gradient-2)" d="M0,196L130.9,98L261.8,392L392.7,98L523.6,294L654.5,245L785.5,196L916.4,392L1047.3,441L1178.2,0L1309.1,441L1440,245L1570.9,98L1701.8,343L1832.7,294L1963.6,98L2094.5,0L2225.5,147L2356.4,196L2487.3,0L2618.2,294L2749.1,392L2880,294L3010.9,392L3141.8,343L3141.8,490L3010.9,490L2880,490L2749.1,490L2618.2,490L2487.3,490L2356.4,490L2225.5,490L2094.5,490L1963.6,490L1832.7,490L1701.8,490L1570.9,490L1440,490L1309.1,490L1178.2,490L1047.3,490L916.4,490L785.5,490L654.5,490L523.6,490L392.7,490L261.8,490L130.9,490L0,490Z"></path>
+<defs>
+<linearGradient id="sw-gradient-3" x1="0" x2="0" y1="1" y2="0">
+  <stop stop-color="rgba(122, 80, 52, 1)" offset="0%"></stop>
+  <stop stop-color="rgba(122, 80, 52, 1)" offset="100%"></stop>
+</linearGradient>
+</defs>
+<path style="transform:translate(0, 50px); opacity:0.8" fill="url(#sw-gradient-3)" d="M0,0L130.9,196L261.8,147L392.7,392L523.6,147L654.5,245L785.5,441L916.4,343L1047.3,49L1178.2,245L1309.1,392L1440,0L1570.9,49L1701.8,0L1832.7,196L1963.6,98L2094.5,196L2225.5,147L2356.4,441L2487.3,196L2618.2,0L2749.1,49L2880,294L3010.9,245L3141.8,98L3141.8,490L3010.9,490L2880,490L2749.1,490L2618.2,490L2487.3,490L2356.4,490L2225.5,490L2094.5,490L1963.6,490L1832.7,490L1701.8,490L1570.9,490L1440,490L1309.1,490L1178.2,490L1047.3,490L916.4,490L785.5,490L654.5,490L523.6,490L392.7,490L261.8,490L130.9,490L0,490Z"></path>
+<g fill="#00000022" fill-rule="evenodd" clip-rule="evenodd" stroke="#fff" stroke-width="4" stroke-miterlimit="10" stroke-linejoin="round">
+<!-- <path d="M70.213 200.94L27 26l173.23 49.874z"> -->
+<!-- M 112.3408 386.504 L 43.2 106.6 l 277.168 79.7984 z -->
+  <!-- <path d="M 687.3408 386.504 L 618.2 106.6 l 277.168 79.7984 z"> -->
+	<path d="M 687.3408 346.504 L 618.2 66.6 l 277.168 79.7984 z">
+  </path>
+  <circle r="5" fill="red">
+    <animateMotion
+      dur="10s"
+      repeatCount="indefinite"
+      path="M 687.3408 346.504 L 618.2 66.6 l 277.168 79.7984 z" />
+  </circle>
+  <!-- <path d="M113.583 50.942l21.591 87.496-86.567-24.945z"> -->
+  <!-- <path d="M 756.7328 146.5072 l 34.5456 139.9936 l -138.5072 -39.912 z"> -->
+  <path d="M 756.7328 106.5072 l 34.5456 139.9936 l -138.5072 -39.912 z" />
+  <circle r="5" fill="green">
+    <animateMotion
+      dur="10s"
+      repeatCount="indefinite"
+      path="M 756.7328 106.5072 l 34.5456 139.9936 l -138.5072 -39.912 z" />
+  </circle>
+  <!-- <path d="M92.103 125.36L81.379 81.895l43.008 12.346zM70.651 38.483l10.724 43.465-43.008-12.346zM156.663 63.26l10.724 43.465-43.008-12.346zM92.108 125.39l10.724 43.465-43.008-12.346z"/> -->
+  <!-- <path d="M 722.3648 265.576 L 705.2064 196.032 l 68.8128 19.7536 z M 688.0416 126.5728 l 17.1584 69.544 l -68.8128 -19.7536 z M 825.6608 166.216 l 17.1584 69.544 l -68.8128 -19.7536 z M 722.3728 265.624 l 17.1584 69.544 l -68.8128 -19.7536 z"/> -->
+  <path d="M 722.3648 225.576 L 705.2064 156.032 l 68.8128 19.7536 z M 688.0416 86.5728 l 17.1584 69.544 l -68.8128 -19.7536 z M 825.6608 126.216 l 17.1584 69.544 l -68.8128 -19.7536 z M 722.3728 225.624 l 17.1584 69.544 l -68.8128 -19.7536 z" />
+  <circle r="5" fill="blue">
+    <animateMotion
+      dur="10s"
+      repeatCount="indefinite"
+      path="M 722.3648 225.576 L 705.2064 156.032 l 68.8128 19.7536 z" />
+  </circle>
+  <circle r="5" fill="blue">
+    <animateMotion
+      dur="10s"
+      repeatCount="indefinite"
+      path="M 688.0416 86.5728 l 17.1584 69.544 l -68.8128 -19.7536 z"
+    />
+  </circle>
+  <circle r="5" fill="blue">
+    <animateMotion
+      dur="10s"
+      repeatCount="indefinite"
+      path="M 825.6608 126.216 l 17.1584 69.544 l -68.8128 -19.7536 z"
+    />
+  </circle>
+  <circle r="5" fill="blue">
+    <animateMotion
+      dur="10s"
+      repeatCount="indefinite"
+      path="M 722.3728 225.624 l 17.1584 69.544 l -68.8128 -19.7536 z"
+    />
+  </circle>
+</g>
+</svg>
+

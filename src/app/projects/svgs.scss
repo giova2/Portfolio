@@ -147,6 +147,20 @@ $light-highContrast-textShadow: 2px 2px 1px white;
   }
 }
 
+.ListGames {
+  @apply bg-sky-300 border-orange-900 border-b-2 text-black;
+  background-image: url(../../assets/gameWaves.svg);
+  background-position: bottom;
+  background-size: cover;
+  back a {
+    @apply text-black;
+    &:hover {
+      @apply text-gray-700;
+      text-shadow: none;
+    }
+  }
+}
+
 .svg {
   @apply bg-orange-400 border-red-600 border-b-2 text-black;
   background-image: url(../../assets/icons/svg_vector.svg);

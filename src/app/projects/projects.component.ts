@@ -81,7 +81,7 @@ export class ProjectsComponent implements OnInit {
       this.projects = cachedProjects;
       this.loading = false;
       this.showHome = !!itemId;
-      this.updateProjectsInBackground(itemId);
+      this.updateProjectsInBackground(itemId, cachedProjects);
       return;
     }
     await this.updateProjectsInBackground(itemId);
@@ -109,7 +109,10 @@ export class ProjectsComponent implements OnInit {
     );
   }
 
-  async updateProjectsInBackground(itemId: string | null) {
+  async updateProjectsInBackground(
+    itemId: string | null,
+    cachedProjects?: Projects
+  ) {
     try {
       let projectsCollectionRef;
       if (itemId) {
@@ -131,11 +134,36 @@ export class ProjectsComponent implements OnInit {
           actualProjects.push({ ...project, id: res.id });
         }
       });
-      // we set this to make sure that setting up the variable does not happen before the animation ends
-      setTimeout(() => {
+      if (cachedProjects) {
+        // we set this to make sure that setting up the variable does not happen before the animation ends
+        setTimeout(() => {
+          // see if there is a difference between the cached projects and the actual projects
+          let needsUpdate = false;
+          // first we check that the actualProjects are not missing any cached project
+          for (let i = 0; i < actualProjects.length; i++) {
+            const project = actualProjects[i];
+            if (!cachedProjects.find(({ id }) => project.id === id)) {
+              needsUpdate = true;
+              break;
+            }
+          }
+          // then we check that the cached projects are not missing any actual project
+          for (let i = 0; i < cachedProjects.length; i++) {
+            const project = cachedProjects[i];
+            if (!actualProjects.find(({ id }) => project.id === id)) {
+              needsUpdate = true;
+              break;
+            }
+          }
+          if (needsUpdate) {
+            this.projects = actualProjects;
+          }
+          setCachedProjects(itemId, actualProjects);
+        }, 550);
+      } else {
         this.projects = actualProjects;
         setCachedProjects(itemId, this.projects);
-      }, 550);
+      }
     } catch (error) {
       console.error({ error });
     }

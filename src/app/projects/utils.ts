@@ -10,13 +10,12 @@ export const getCachedProjects = (itemId: string | null) => {
     // if the today's date is less than the moment ttl was set plus 7 days, then the ttl should be refreshed
     if (dateTTL > todaysDate) {
       const storedProjects = localStorage.getItem(`projects${suffix}`);
-      console.log('restored');
       if (storedProjects) {
         return JSON.parse(storedProjects);
       }
     }
   }
-  return null;
+  return [];
 };
 
 export const setCachedProjects = (

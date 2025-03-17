@@ -34,12 +34,12 @@ $light-highContrast-textShadow: 2px 2px 1px white;
 }
 
 .home {
-  @apply flex justify-center items-center absolute right-5 top-5 rounded-full bg-white text-slate-800;
+  @apply flex justify-center items-center absolute right-3 top-2 rounded-full bg-slate-800 text-green-500 z-10 opacity-60;
   &:hover {
-    @apply bg-slate-800 text-white;
+    @apply bg-green-500 text-slate-800 opacity-100;
   }
-  width: 30px;
-  height: 30px;
+  width: 36px;
+  height: 36px;
   cursor: pointer;
 }
 

@@ -161,6 +161,74 @@ $light-highContrast-textShadow: 2px 2px 1px white;
   }
 }
 
+/* PACMAN animation  ---> */
+
+@keyframes moveGhost {
+  0% {
+    left: -70px;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.container-pacman-ghost {
+  width: 1px;
+  position: absolute;
+  bottom: 0;
+  left: 0px;
+  animation: moveGhost 10s linear infinite;
+}
+
+@keyframes movePacman {
+  0% {
+    left: -100px;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.container-pacman-sprite {
+  width: 1px;
+  position: absolute;
+  bottom: 0;
+  left: 0px;
+  animation: movePacman 10s linear infinite;
+}
+
+@keyframes moveSprite {
+  0% {
+    background-position: 0px;
+  }
+  100% {
+    background-position: -110px;
+  }
+}
+
+.pacman-sprite,
+.pacman-ghost {
+  display: flex;
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  width: 37px;
+  height: 37px;
+}
+
+.pacman-ghost {
+  display: block;
+  background: url('../../assets/sprites/pacman-ghost.png') no-repeat;
+  left: 40px;
+}
+
+.pacman-sprite {
+  background: url('../../assets/sprites/pcman-mini.png') no-repeat;
+  animation: moveSprite 0.5s steps(3) infinite;
+}
+
+/* <---  PACMAN animation  */
+
 .svg {
   @apply bg-orange-400 border-red-600 border-b-2 text-black;
   background-image: url(../../assets/icons/svg_vector.svg);

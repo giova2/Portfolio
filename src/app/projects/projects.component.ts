@@ -77,33 +77,14 @@ export class ProjectsComponent implements OnInit {
   async ngOnInit() {
     const itemId = this.route.snapshot.paramMap.get('id');
     const cachedProjects = getCachedProjects(itemId);
-    if (cachedProjects) {
+    if (cachedProjects && cachedProjects.length > 0) {
       this.projects = cachedProjects;
       this.loading = false;
       this.showHome = !!itemId;
+      this.updateProjectsInBackground(itemId);
       return;
     }
-    let projectsCollectionRef;
-    if (itemId) {
-      projectsCollectionRef = collection(
-        this.firestore,
-        `Records/${itemId}/Projects`
-      );
-      this.showHome = true;
-    } else {
-      projectsCollectionRef = collection(this.firestore, 'Records');
-    }
-    const projectsQuery = fbQuery(projectsCollectionRef, orderBy('order'));
-    const projectsQuerySnapshot = await getDocs(projectsQuery);
-    console.log({ projectsQuerySnapshot });
-    projectsQuerySnapshot.forEach(res => {
-      const project = res.data() as Project;
-      if (project && !!project.visible) {
-        this.projects.push({ ...project, id: res.id });
-      }
-    });
-    setCachedProjects(itemId, this.projects);
-
+    await this.updateProjectsInBackground(itemId);
     this.loading = false;
   }
 
@@ -120,5 +101,43 @@ export class ProjectsComponent implements OnInit {
 
   turnOffLoading() {
     this.loadingAnimationFinishDone = true;
+  }
+
+  checkRouteGames(project: Project) {
+    return (
+      project.routePath && project.routePath.toLowerCase().startsWith('games')
+    );
+  }
+
+  async updateProjectsInBackground(itemId: string | null) {
+    try {
+      let projectsCollectionRef;
+      if (itemId) {
+        projectsCollectionRef = collection(
+          this.firestore,
+          `Records/${itemId}/Projects`
+        );
+        this.showHome = true;
+      } else {
+        projectsCollectionRef = collection(this.firestore, 'Records');
+      }
+      const projectsQuery = fbQuery(projectsCollectionRef, orderBy('order'));
+      const projectsQuerySnapshot = await getDocs(projectsQuery);
+
+      const actualProjects: Projects = [];
+      projectsQuerySnapshot.forEach(res => {
+        const project = res.data() as Project;
+        if (project && !!project.visible) {
+          actualProjects.push({ ...project, id: res.id });
+        }
+      });
+      // we set this to make sure that setting up the variable does not happen before the animation ends
+      setTimeout(() => {
+        this.projects = actualProjects;
+        setCachedProjects(itemId, this.projects);
+      }, 550);
+    } catch (error) {
+      console.error({ error });
+    }
   }
 }

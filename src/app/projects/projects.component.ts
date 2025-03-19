@@ -4,6 +4,7 @@ import {
   OnInit,
   inject,
   ViewChild,
+  HostListener,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
@@ -61,6 +62,8 @@ const listAnimation = trigger('listAnimation', [
 export class ProjectsComponent implements OnInit {
   @ViewChild('mainContainer', { static: false }) mainContainerRef!: ElementRef;
 
+  showScrollBottomButton = false;
+  showScrollTopButton = false;
   title = 'Projects';
   projects: Projects = [];
   showHome = false;
@@ -73,6 +76,18 @@ export class ProjectsComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router
   ) {}
+
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll() {
+    // Calcula si el usuario ha llegado al fondo de la página
+    const scrollPosition = window.pageYOffset + window.innerHeight;
+    const contentHeight = this.mainContainerRef.nativeElement.scrollHeight;
+    const hasScroll = contentHeight > window.innerHeight;
+    this.showScrollBottomButton =
+      hasScroll && scrollPosition < contentHeight - 100;
+    this.showScrollTopButton =
+      hasScroll && scrollPosition >= contentHeight - 100;
+  }
 
   async ngOnInit() {
     const itemId = this.route.snapshot.paramMap.get('id');
@@ -167,5 +182,14 @@ export class ProjectsComponent implements OnInit {
     } catch (error) {
       console.error({ error });
     }
+  }
+
+  goToBottom() {
+    const contentHeight = this.mainContainerRef.nativeElement.scrollHeight;
+    window.scrollTo({ top: contentHeight, behavior: 'smooth' });
+  }
+
+  goTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 }

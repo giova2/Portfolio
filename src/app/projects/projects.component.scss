@@ -14,7 +14,7 @@ $light-highContrast-textShadow: 2px 2px 1px white;
 
 .h-vh25 {
   height: 25vh;
-  min-height: 25vh;
+  min-height: 150px;
 }
 
 .project-row {
@@ -41,6 +41,20 @@ $light-highContrast-textShadow: 2px 2px 1px white;
   width: 36px;
   height: 36px;
   cursor: pointer;
+}
+
+.scroll-button {
+  @apply flex justify-center items-center fixed bottom-4 right-4 rounded-full bg-slate-800 text-slate-100;
+  &:hover {
+    @apply text-slate-800 bg-slate-100;
+  }
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  transition: 0.5s ease;
+  &.up {
+    transform: rotate(180deg);
+  }
 }
 
 @media (min-width: 640px /* sm */) {
